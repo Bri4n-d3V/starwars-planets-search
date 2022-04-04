@@ -32,14 +32,9 @@ function PlanetsProvider({ children }) {
   };
 
   // Filtragem do meu senhor, Rod.
-  const namesFilter = () => {
-    if (filters.filterByName.name) {
-      return planets.filter(
-        ({ name }) => name.toLowerCase().includes(filters.filterByName.name),
-      );
-    }
-    return planets;
-  };
+  const namesFilter = () => planets.filter(
+    ({ name }) => name.toLowerCase().includes(filters.filterByName.name),
+  );
 
   const numericValuesFilter = () => {
     const { column, comparison, value } = filters.filterByNumericValues[0];
